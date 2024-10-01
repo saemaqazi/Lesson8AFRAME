@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="zombie.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <a-assets>
+          <a-asset-item id="zombie" src="assets/zombie/scene.gltf"></a-asset-item>
+        
+          <a-asset-item id="environment" src="assets/radiation_environment/scene.gltf"></a-asset-item>
+
+          <a-asset-item id="bust" src="assets/zombie_bust/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-sky color="#80b3ff"></a-sky>
+      
+      <a-entity
+        gltf-model="#environment" 
+        position="-10 0 -12"
+        scale="2 2 2" 
+        animation-mixer
+        zombie-fest>
+       </a-entity>
+
+      <a-entity 
+        gltf-model="#bust" 
+        position="30 0 -90"
+        scale="0.5 0.5 0.5">
+       </a-entity>
+      
+
+      <!-- <a-entity 
+        gltf-model="#zombie" 
+        position="10 0 -12"
+        scale="2 2 2" 
+        animation="property: position; to: -10 0 1000; easing:linear; loop: true; dur: 150000"
+        animation-mixer="clip: Walk">
+       </a-entity>
+       position="-3.7 79.7 254.7" rotation="-12.8 -0.3 0" fly:true; acceleration: 600"
+      -->
+    
+
+    </a-scene>
+</body>
+
+</html>
